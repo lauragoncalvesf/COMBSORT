@@ -20,4 +20,5 @@ Aluno *criaAluno(Aluno *aluno){
     scanf("%ld", &aluno->matricula);
     printf("Informe o documento:\n");
     scanf("%ld", &aluno->documento);
+    return aluno;
 }
