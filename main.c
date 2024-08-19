@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include<stdlib.h>
 #include "aluno.h"
 
 #define MAX 10
@@ -15,4 +17,5 @@ int main(){
     imprimeAlunos(alunos, qnt);
     ordenaAlunosPorMatricula(alunos, qnt);
 
+    return 0;
 }

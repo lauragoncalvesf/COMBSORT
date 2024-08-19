@@ -1,3 +1,6 @@
+#include<stdio.h>
+#include<stdlib.h>
+
 typedef struct aluno Aluno;
 /*função que aloca memória para struct */
 

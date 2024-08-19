@@ -20,7 +20,7 @@ Aluno *criaAluno( int *qnt){
     scanf(" %[^\n]", aluno->nome);
     printf("Informe o documento:\n");
     scanf("%ld", &aluno->documento);
-    *qnt++;
+    (*qnt)++;
     return aluno;
 }
 
@@ -37,10 +37,10 @@ void imprimeAlunos (Aluno** alunos, int qnt){
 void ordenaAlunosPorMatricula(Aluno **alunos, int qnt){
     for (int i = 0; i < qnt - 1; i++) {
         for (int j = 0; j < qnt - i - 1; j++) {
-            if ((*alunos)[j].matricula > (*alunos)[j + 1].matricula) {
-                Aluno temp = (*alunos)[j];
-                (*alunos)[j] = (*alunos)[j + 1];
-                (*alunos)[j + 1] = temp;
+            if (alunos[j]->matricula > alunos[j + 1]->matricula) {
+                Aluno *temp = alunos[j];
+                alunos[j] = alunos[j + 1];
+                alunos[j + 1] = temp;
             }
         }
     }
