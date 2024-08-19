@@ -4,3 +4,5 @@ typedef struct aluno Aluno;
 Aluno *criaAluno( int *qnt);
 
 void imprimeAlunos (Aluno** alunos, int qnt);
+
+void ordenaAlunosPorMatricula(Aluno **alunos, int qnt);

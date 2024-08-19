@@ -33,3 +33,15 @@ void imprimeAlunos (Aluno** alunos, int qnt){
         printf("---------------------\n");
     }
 }
+
+void ordenaAlunosPorMatricula(Aluno **alunos, int qnt){
+    for (int i = 0; i < qnt - 1; i++) {
+        for (int j = 0; j < qnt - i - 1; j++) {
+            if ((*alunos)[j].matricula > (*alunos)[j + 1].matricula) {
+                Aluno temp = (*alunos)[j];
+                (*alunos)[j] = (*alunos)[j + 1];
+                (*alunos)[j + 1] = temp;
+            }
+        }
+    }
+}
