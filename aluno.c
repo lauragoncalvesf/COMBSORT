@@ -20,7 +20,6 @@ Aluno *criaAluno( int *qnt){
     scanf(" %[^\n]", aluno->nome);
     printf("Informe o documento:\n");
     scanf("%ld", &aluno->documento);
-    return aluno;
     *qnt++;
     return aluno;
 }
