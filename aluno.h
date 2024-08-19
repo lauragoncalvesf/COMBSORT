@@ -1,5 +1,6 @@
 typedef struct aluno Aluno;
 /*função que aloca memória para struct */
 
-Aluno *criaAluno(Aluno *aluno);
-/**/
+Aluno *criaAluno( int *qnt);
+
+void imprimeAlunos (Aluno** alunos, int qnt);
