@@ -85,7 +85,7 @@ int carregaAlunosDeArquivo(Aluno **alunos, int maxAlunos, const char *nomeArquiv
             exit(1);
         }
         fscanf(arquivo, "%ld\n", &alunos[qnt]->matricula);
-        printf("%ld\n", alunos[qnt]->matricula);
+        //printf("%ld\n", alunos[qnt]->matricula);
         fgets(alunos[qnt]->nome, 50, arquivo);
          qnt++;
     }

@@ -15,11 +15,8 @@ int main() {
 
     
     qnt = carregaAlunosDeArquivo(alunos, MAX, nomeArquivo);
-    
-    imprimeAlunos(alunos, qnt);
-
     combSort(alunos, qnt);
-
+    imprimeAlunos(alunos, qnt);
     printf("Alunos ordenados por matrícula!\n");
 
     salvaAlunosEmArquivo(alunos, qnt, nomeArquivo);
