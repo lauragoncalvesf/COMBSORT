@@ -52,7 +52,7 @@ void combSort(Aluno **alunos, int qnt) {
     }
 }
 /*COMPLEXIDADE DE TEMPO:
-    n (log n)
+   O(n (log n)) 
 */
 
 void salvaAlunosEmArquivo(Aluno **alunos, int qnt, const char *nomeArquivo) {
