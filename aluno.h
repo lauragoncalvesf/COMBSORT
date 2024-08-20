@@ -7,7 +7,7 @@ Aluno *criaAluno( int *qnt);
 
 void imprimeAlunos (Aluno** alunos, int qnt);
 
-void ordenaAlunosPorMatricula(Aluno **alunos, int qnt);
+void combSort(Aluno **alunos, int qnt);
 
 void salvaAlunosEmArquivo(Aluno **alunos, int qnt, const char *nomeArquivo);
 

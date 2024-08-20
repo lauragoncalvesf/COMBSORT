@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include"aluno.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "aluno.h"
 
 struct aluno{
     long int matricula;
@@ -20,46 +20,63 @@ Aluno *criaAluno(int *qnt){
 
 void imprimeAlunos(Aluno **alunos, int qnt){
     for(int i = 0; i < qnt; i++){
+        if (strcmp(alunos[i]->nome, "\n") == 1){
+            printf("Tem uma linha vazia");
+        }
         printf("Aluno %d:\n", i + 1);
-        printf("Nome: %s\n", alunos[i]->nome);
+        printf("Nome: %s", alunos[i]->nome);
         printf("Matrícula: %ld\n", alunos[i]->matricula);
         printf("---------------------\n");
     }
 }
 
-void ordenaAlunosPorMatricula(Aluno **alunos, int qnt){
-    for (int i = 0; i < qnt - 1; i++) {
-        for (int j = 0; j < qnt - i - 1; j++) {
-            if (alunos[j]->matricula > alunos[j + 1]->matricula) {
-                Aluno *temp = alunos[j];
-                alunos[j] = alunos[j + 1];
-                alunos[j + 1] = temp;
+void combSort(Aluno **alunos, int qnt) {
+    int gap = qnt;
+     float fator = 1.3;
+    int troca;
+
+    while (gap > 1 || troca) {
+        // Calcula o próximo gap
+        gap = (int)(gap / fator);
+        if (gap < 1) gap = 1;
+
+        troca = 0;
+
+        for (int i = 0; i + gap < qnt; i++) {
+            if (alunos[i]->matricula > alunos[i + gap]->matricula) {
+                Aluno *temp = alunos[i];
+                alunos[i] = alunos[i + gap];
+                alunos[i + gap] = temp;
+                troca = 1;
             }
+        //printf("%ld\n", alunos[i]->matricula);
         }
     }
 }
 
 void salvaAlunosEmArquivo(Aluno **alunos, int qnt, const char *nomeArquivo) {
-    FILE *arquivo = fopen(nomeArquivo, "r");  
+    FILE *arquivo = fopen(nomeArquivo, "w");  
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo para escrita!\n");
         return;
     }
     for (int i = 0; i < qnt; i++) {
+        
         fprintf(arquivo, "%ld\n", alunos[i]->matricula);
-        fprintf(arquivo, "%s\n", alunos[i]->nome);
+        fprintf(arquivo, "%s", alunos[i]->nome);
+     
     }
     fclose(arquivo);
     printf("Alunos salvos com sucesso em %s!\n", nomeArquivo);
 }
 
 int carregaAlunosDeArquivo(Aluno **alunos, int maxAlunos, const char *nomeArquivo) {
-    FILE *arquivo = fopen(nomeArquivo, "w"); 
+    FILE *arquivo = fopen(nomeArquivo, "r"); 
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo para leitura!\n");
         return 0;
     }
-
+    printf("CARREGANDO");
     int qnt = 0;
     while (!feof(arquivo) && qnt < maxAlunos) {
         alunos[qnt] = (Aluno *) malloc(sizeof(Aluno));
@@ -68,9 +85,9 @@ int carregaAlunosDeArquivo(Aluno **alunos, int maxAlunos, const char *nomeArquiv
             exit(1);
         }
         fscanf(arquivo, "%ld\n", &alunos[qnt]->matricula);
+        printf("%ld\n", alunos[qnt]->matricula);
         fgets(alunos[qnt]->nome, 50, arquivo);
-        alunos[qnt]->nome[strcspn(alunos[qnt]->nome, "\n")] = '\0';  
-        qnt++;
+         qnt++;
     }
     fclose(arquivo);
     printf("Alunos carregados com sucesso de %s!\n", nomeArquivo);
