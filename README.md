@@ -1,8 +1,9 @@
+# CombSort
+
 <div>
 <img align="right" width="110" height="170" src="https://assecom.ufersa.edu.br/wp-content/uploads/sites/24/2014/09/PNG-bras%C3%A3o-Ufersa.png">
 <br>
 
-# CombSort
 
  <h2 id="about" style="font-weight: bold; font-size: 2rem">Sobre o Algoritmo</h2>
 
