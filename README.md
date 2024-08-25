@@ -36,13 +36,13 @@ void combSort(Aluno **alunos, int qnt) {
     float fator = 1.3;
     int troca;
 
-    while (gap > 1 || troca) { //C1 * log n
+    while (gap > 1 || troca) { 
         gap = (int)(gap / fator);
         if (gap < 1) gap = 1;
 
         troca = 0;
 
-        for (int i = 0; i + gap < qnt; i++) { // C2 * n * log n
+        for (int i = 0; i + gap < qnt; i++) { 
             if (alunos[i]->matricula > alunos[i + gap]->matricula) {
                 Aluno *temp = alunos[i];
                 alunos[i] = alunos[i + gap];
