@@ -23,6 +23,8 @@ Redução do Gap: Após cada iteração, o "gap" é reduzido, até que ele chegu
 
 Critério de Parada: O algoritmo continua até que nenhuma troca seja necessária, indicando que a lista está ordenada.
 
+![alt text](image.png)
+
 ## Implementação
 
 Aqui está um exemplo de como o *CombSort* pode ser implementado em C:
