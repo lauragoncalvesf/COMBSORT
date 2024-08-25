@@ -6,8 +6,7 @@
 <br>
 
 
-### Sobre o algoritmo
-
+ <h2 id="about" style="font-weight: bold; font-size: 2rem">Sobre o Algoritmo</h2>
 
 CombSort é um algoritmo de ordenação que foi desenvolvido como uma melhoria em relação ao BubbleSort. O objetivo principal do CombSort é reduzir o número de comparações e trocas necessárias para ordenar uma lista de elementos, especialmente aqueles que estão distantes uns dos outros na lista.
 
