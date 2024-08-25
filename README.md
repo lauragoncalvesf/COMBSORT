@@ -74,12 +74,17 @@ gcc main.c -o main && ./main
   <h2 id="complexity" style="font-weight: bold; font-size: 2rem">Complexidade</h2>
 
 ### Pior Caso:
- O(n²)
-
+O pior caso ocorre quando a lista está em uma ordem que é a mais desfavorável possível para o algoritmo. Para o CombSort, isso tipicamente acontece quando a lista está em ordem inversa, ou seja, todos os elementos estão na ordem contrária à desejada.
+```
+C1 * n + C2 * n = O(n²)
+```
 
 
 ### Melhor Caso:
-O(n log n)
+O melhor caso ocorre quando a lista está quase ordenada desde o início, ou seja, os elementos estão em grande parte na ordem correta, com apenas algumas pequenas desordenações. Para o CombSort, isso significa que as comparações iniciais feitas com um gap grande não encontram muitas trocas necessárias, e à medida que o gap diminui, a lista se ajusta rapidamente.
+```
+C1 * n + C2 * n * log n = O(n log n)
+```
 
 
 <h2 id="colab" style="font-weight: bold; font-size: 2rem">Contribuidores</h2>
