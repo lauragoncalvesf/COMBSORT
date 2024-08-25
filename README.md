@@ -73,6 +73,7 @@ gcc main.c -o main && ./main
 
   <h2 id="complexity" style="font-weight: bold; font-size: 2rem">Complexidade</h2>
 
+### Tempo
 ### Pior Caso:
 O pior caso ocorre quando a lista está em uma ordem que é a mais desfavorável possível para o algoritmo. Para o CombSort, isso tipicamente acontece quando a lista está em ordem inversa, ou seja, todos os elementos estão na ordem contrária à desejada.
 ```
@@ -86,6 +87,8 @@ O melhor caso ocorre quando a lista está quase ordenada desde o início, ou sej
 C1 * n + C2 * n * log n = O(n log n)
 ```
 
+### Espaço:
+Realiza a ordenação diretamente no array original sem necessitar de memória extra proporcional ao tamanho da entrada. Isso torna o Comb Sort eficiente em termos de uso de espaço, utilizando apenas O(1) de espaço auxiliar.
 
 <h2 id="colab" style="font-weight: bold; font-size: 2rem">Contribuidores</h2>
  
