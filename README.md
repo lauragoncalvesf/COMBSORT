@@ -43,7 +43,7 @@ void combSort(Aluno **alunos, int qnt) {
     }
 }
 
-
+```
 
 
 
@@ -70,6 +70,8 @@ gcc main.c -o main && ./main
 
 ### Melhor Caso:
 
+
+```
 
 </div>
 Contribuidores
