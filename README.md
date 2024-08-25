@@ -6,14 +6,22 @@
 <br>
 
 
+### Sobre o algoritmo
+
+
+CombSort é um algoritmo de ordenação que foi desenvolvido como uma melhoria em relação ao BubbleSort. O objetivo principal do CombSort é reduzir o número de comparações e trocas necessárias para ordenar uma lista de elementos, especialmente aqueles que estão distantes uns dos outros na lista.
 
 ## Como Funciona
 
-*CombSort* é um algoritmo de ordenação que pode ser visto como uma melhoria sobre o *BubbleSort*. Ele funciona eliminando pequenos valores na extremidade direita que precisam ser trocados para a extremidade esquerda, o que aumenta o tamanho do passo (gap) usado para comparação.
+O conceito básico por trás do CombSort é eliminar "tartarugas", ou seja, valores pequenos que estão localizados no final da lista e precisam ser movidos para o início. Para fazer isso, o CombSort introduz a ideia de um "gap" (intervalo) entre os elementos que estão sendo comparados.
 
-O passo inicial (gap) é geralmente o tamanho do array dividido por um fator de encolhimento (geralmente 1.3). Após cada iteração, o passo é reduzido até que eventualmente se torne 1, onde o algoritmo então se comporta como um *BubbleSort*.
+Gap Inicial: O algoritmo começa com um "gap" grande, geralmente o tamanho da lista dividido por um fator de redução (geralmente 1.3).
 
-O algoritmo continua até que não haja mais trocas, o que indica que a lista está ordenada.
+Comparações e Trocas: Elementos que estão distantes pelo valor do "gap" são comparados e, se necessário, trocados.
+
+Redução do Gap: Após cada iteração, o "gap" é reduzido, até que ele chegue a 1, onde o algoritmo então se comporta como um BubbleSort, comparando e trocando elementos adjacentes.
+
+Critério de Parada: O algoritmo continua até que nenhuma troca seja necessária, indicando que a lista está ordenada.
 
 ## Implementação
 
