@@ -35,7 +35,7 @@ gcc main.c -o main && ./main
 ### Melhor Caso:
 
 
-  
+  </div>
   <h2 id="colab" style="font-weight: bold; font-size: 2rem">Contribuidores</h2>
  
   <table>
